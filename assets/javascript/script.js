@@ -128,26 +128,11 @@ $(function () {
 /*------------------------------------- Pop Videos -------------------------------------*/
 $(document).ready(function () {
     $('.vimeo').magnificPopup({
-        items: {
-            src: 'https://vimeo.com/259411563'
-        },
         type: 'iframe'
     });
 
-    $('.youtube').magnificPopup({
-        items: {
-            src: 'https://www.youtube.com/watch?v=PavYAOpVpJI'
-        },
-        type: 'iframe'
-    });
-
-    $('.soundcloud').magnificPopup({
-        type: 'soundcloud',
-        items: {
-            src: 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/163522130&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true'
-        },
-        type: 'iframe',
-    });
+    // YouTube popup disabled - gallery items are now static images
+    // See YOUTUBE_EMBEDDING_NOTES.md in project root for details on how to re-enable video embedding
 });
 
 /*------------------------------------- Testimonial Slider -------------------------------------*/
@@ -225,13 +210,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /*------------------------------------- Fix Header Add Class -------------------------------------*/
 const header = document.querySelector('header');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
+if (header) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+}
 
 /*------------------------------------- Menu active button  -------------------------------------*/
 const li = document.querySelectorAll(".menu-btn");
