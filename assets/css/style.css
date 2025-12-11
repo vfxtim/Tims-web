@@ -1117,7 +1117,7 @@ ul.slick-dots button {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     margin-top: 30px;
-    gap: 20px;
+    gap: 35px;
 }
 .progress-item {
     display: flex;
